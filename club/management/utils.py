@@ -60,7 +60,7 @@ def op_select(data_list, post_list, show_num, desc_dict, table):
             temp_str = key + ' = ' + '"' + desc_dict[key] + '"' + ' and '
             sql_select += temp_str
         sql_select = sql_select[:-5]
-    sql_select += ' order by id desc limit ' + show_num + ';'
+    sql_select += ' order by id desc limit ' + str(show_num) + ';'
     result_tuple = sql_execute(sql_select)
     dict_list = []
     for row in result_tuple:

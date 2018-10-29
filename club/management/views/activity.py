@@ -54,6 +54,7 @@ def get_activity_list(request):
     :return:
     """
     try:
+        # import ipdb;ipdb.set_trace()
         get_data_dict = {}
         if request.method == "GET":
             data = {'status': 2, 'error': 'Wrong request method'}
@@ -63,11 +64,11 @@ def get_activity_list(request):
         select_item_list = []
         select_lim_dict = {}
         if get_data_dict['select_person'] == 'admin':
-            select_item_list = ['activity_name', 'activity_person', 'activity_telephone', 'activity_start_time',
+            select_item_list = ['id', 'activity_name', 'activity_person', 'activity_telephone', 'activity_start_time',
                                 'activity_end_time', 'activity_place', 'activity_association', 'activity_state']
             select_lim_dict = {}
         elif get_data_dict['select_person'] == 'user':
-            select_item_list = ['activity_name', 'activity_start_time', 'activity_end_time', 'activity_place',
+            select_item_list = ['id', 'activity_name', 'activity_start_time', 'activity_end_time', 'activity_place',
                                 'activity_association']
             select_lim_dict = {'activity_state': '审核通过'}
         if 'select_club_id' in get_data_dict.keys():
@@ -76,6 +77,12 @@ def get_activity_list(request):
         if 'select_lim_num' in get_data_dict.keys():
             get_lim_num = get_data_dict['select_lim_num']
         select_res_list = get_list('activity_info', get_lim_num, select_item_list, select_lim_dict)
+        #  将社团id转化成名字
+        for item in select_res_list:
+            for key in item.keys():
+                if key == 'activity_association':
+                    res_dict = get_detail('association_info',item['activity_association'],['association_name'])
+                    item['activity_association'] = res_dict['association_name']
         data = {'status': 0, 'value': select_res_list}
         return JsonResponse(data)
     except Exception as e:
@@ -100,6 +107,10 @@ def get_activity_detail(request):
         select_item_list = ['activity_name', 'activity_person', 'activity_telephone', 'activity_start_time',
                             'activity_end_time', 'activity_place', 'activity_association', 'activity_state']
         select_res_dict = get_detail('activity_info', select_activity_id, select_item_list)
+        for key in select_res_dict.keys():
+            if key == 'activity_association':
+                res_dict = get_detail('association_info', select_res_dict['activity_association'], ['association_name'])
+                select_res_dict['activity_association'] = res_dict['association_name']
         data = {'status': 0, 'value': select_res_dict}
         return JsonResponse(data)
     except Exception as e:
@@ -135,7 +146,7 @@ def update_activity_info(request):
         for key, value in get_data_dict.items():
             if key in name_change_dict.keys():
                 update_data_dict[name_change_dict[key]] = value
-        affect_row = update_data('activity_info', get_data_dict['update_activity_id'],update_data_dict)
+        affect_row = update_data('activity_info', get_data_dict['update_activity_id'], update_data_dict)
         if affect_row == 1:
             data = {'status': 0}
         else:
@@ -145,6 +156,7 @@ def update_activity_info(request):
         print(e)
         data = {'status': 1, 'error': str(e)}
         return JsonResponse(data)
+
 
 def delete_activity_info(request):
     """

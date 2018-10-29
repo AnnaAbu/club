@@ -10,15 +10,15 @@ urlpatterns = [
     path(r'activity_list/',club.activity_list),
     path(r'activity_practice/',club.activity_practice),
     path(r'admin_add/',club.admin_add),
-    path(r'admin_list',club.admin_list),
-    path(r'article_add',club.article_add),
-    path(r'article_list',club.article_list),
-    path(r'article_detail',club.article_detail),
-    path(r'back_practice',club.back_practice),
-    path(r'backmain_practice',club.backmain_practice),
-    path(r'communityform_practice',club.communtityform_practice),
-    path(r'getin_form',club.getin_form),
-    path(r'login_practice',club.login_practice),
+    path(r'admin_list/',club.admin_list),
+    path(r'article_add/',club.article_add),
+    path(r'article_list/',club.article_list),
+    path(r'article_detail/',club.article_detail),
+    path(r'back_practice/',club.back_practice),
+    path(r'backmain_practice/',club.backmain_practice),
+    path(r'communityform_practice/',club.communtityform_practice),
+    path(r'getin_form/',club.getin_form),
+    path(r'login_practice/',club.login_practice),
 
 
 
@@ -28,8 +28,8 @@ urlpatterns = [
 
     path(r'get_activity_list/',activity.get_activity_list),
     path(r'get_activity_detail/',activity.get_activity_detail),
-    # path(r'delete_activity/',activity.delete_activity),
-    # path(r'update_activity/',activity.update_activity),
+    # path(r'delete_activity/',activity.delete_activity_info),
+    # path(r'update_activity/',activity.update_activity_info),
     path(r'add_activity/',activity.add_activity),
     #
     # path(r'get_news_list/',news.get_news_list),

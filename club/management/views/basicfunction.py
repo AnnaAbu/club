@@ -10,7 +10,7 @@ def get_list(table_name, list_num, select_item_list, list_lim_dict):
     :param list_lim_dict: 查询限制条件字典（e.g.where key = value）
     :return: 查询到的信息的以字段名为key值为value包装的字典的列表
     """
-    data_dict_list = op_select(select_item_list, list_lim_dict.keys(), list_lim_dict, list_num, table_name)
+    data_dict_list = op_select(select_item_list, list_lim_dict.keys(), list_num, list_lim_dict, table_name)
     return data_dict_list
 
 
