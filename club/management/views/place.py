@@ -95,7 +95,7 @@ def get_place_application_detail(request):
         if request.method == "GET":
             select_place_id = request.GET.get('select_place_application_id', 0)
         elif request.method == "POST":
-            select_place_id = request.GET.get('select_place_application_id', 0)
+            select_place_id = request.POST.get('select_place_application_id', 0)
         select_item_list = ['place_id', 'activity_id', 'place_application_start', 'place_application_end',
                             'place_application_state']
         select_res_dict = get_detail('place_application_info', select_place_application_id, select_item_list)
@@ -209,7 +209,7 @@ def get_place_detail(request):
         if request.method == "GET":
             select_place_id = request.GET.get('select_place_id', 0)
         elif request.method == "POST":
-            select_place_id = request.GET.get('select_place_id', 0)
+            select_place_id = request.POST.get('select_place_id', 0)
         select_item_list = ['place_id', 'activity_id', 'place_application_start', 'place_application_end',
                             'place_application_state']
         select_res_dict = get_detail('place_info', select_place_id, select_item_list)

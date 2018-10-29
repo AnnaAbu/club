@@ -22,7 +22,7 @@ def add_finance(request):
             get_data_dict = request.POST
         name_change_dict = {
             'finance_amount': 'finance_amount',
-            'asscociation_id': 'asscociation_id',
+            'association_id': 'association_id',
             'activity_id': 'activity_id',
             'finance_application_state': 'finance_application_state',
             'finance_storage': 'finance_storage'
@@ -105,7 +105,7 @@ def get_finance_detail(request):
         if request.method == "GET":
             select_finance_id = request.GET.get('select_finance_id', 0)
         elif request.method == "POST":
-            select_finance_id = request.GET.get('select_finance_id', 0)
+            select_finance_id = request.POST.get('select_finance_id', 0)
         select_item_list = ['finance_amount', 'association_id', 'activity_id',
                             'finance_application_state', 'finance_storage']
         select_res_dict = get_detail('finance_info', select_finance_id, select_item_list)
@@ -133,7 +133,7 @@ def update_finance(request):
             get_data_dict = request.POST
         name_change_dict = {
             'finance_amount': 'finance_amount',
-            'asscociation_id': 'asscociation_id',
+            'association_id': 'association_id',
             'activity_id': 'activity_id',
             'finance_application_state': 'finance_application_state',
             'finance_storage': 'finance_storage'

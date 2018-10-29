@@ -103,7 +103,7 @@ def get_activity_detail(request):
         if request.method == "GET":
             select_activity_id = request.GET.get('select_activity_id', 0)
         elif request.method == "POST":
-            select_activity_id = request.GET.get('select_activity_id', 0)
+            select_activity_id = request.POST.get('select_activity_id', 0)
         select_item_list = ['activity_name', 'activity_person', 'activity_telephone', 'activity_start_time',
                             'activity_end_time', 'activity_place', 'activity_association', 'activity_state']
         select_res_dict = get_detail('activity_info', select_activity_id, select_item_list)
@@ -219,7 +219,7 @@ def add_activity_application(request):
         return JsonResponse(data)
 
 
-def get_activity_list(request):
+def get_activity_application(request):
     """
     获得活动报名信息列表 ，可以根据活动id筛选，默认显示15条，区分管理员（包括社团管理员与社联管理员）与用户两种情况
     前端的POST信息需要包含{'select_person':'',#必须
@@ -265,7 +265,7 @@ def get_activity_list(request):
     return JsonResponse(data)
 
 
-def update_activity_info(request):
+def update_activity_application(request):
     """
     根据id与修改数据字典修改数据库中记录 必须POST 必须有update_activity_application_id
     :param request:
