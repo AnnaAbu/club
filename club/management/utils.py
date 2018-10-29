@@ -54,7 +54,7 @@ def get_select_sql(data_list, table):
 
 def op_select(data_list, post_list, show_num, desc_dict, table):
     sql_select = get_select_sql(data_list, table)
-    if len(post_list) == 0:
+    if len(post_list) != 0:
         sql_select += ' where '
         for key in post_list:
             temp_str = key + ' = ' + '"' + desc_dict[key] + '"' + ' and '
