@@ -622,6 +622,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/place.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/users.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -669,8 +670,8 @@
       <file leaf-file-name="activity.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/club/management/views/activity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="598">
+              <caret line="166" column="26" lean-forward="true" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -1241,8 +1242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/club/management/views/activity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        <state relative-caret-position="598">
+          <caret line="166" column="26" lean-forward="true" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>

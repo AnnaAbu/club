@@ -157,7 +157,7 @@ def delete_activity_info(request):
         if request.method == "GET":
             delete_activity_id = request.GET.get('select_activity_id', 0)
         elif request.method == "POST":
-            delete_activity_id = request.GET.get('select_activity_id', 0)
+            delete_activity_id = request.POST.get('select_activity_id', 0)
         affect_row = delete_data('activity_info', delete_activity_id)
         if affect_row == 1:
             data = {'status': 0}
