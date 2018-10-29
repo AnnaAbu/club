@@ -1,0 +1,138 @@
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="{% static 'lib/html5shiv.js'%}"></script>
+    <script type="text/javascript" src="{% static 'lib/respond.min.js'%}"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="{% static 'static/h-ui/css/H-ui.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/Hui-iconfont/1.0.8/iconfont.min.css'%}"/>
+
+    <!--[if lt IE 9]>
+    <link href="{% static 'static/h-ui/css/H-ui.ie.css'%}" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="{% static 'lib/DD_belatedPNG_0.0.8a-min.js'%}"></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>活动中心</title>
+    <meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+    <meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<div class="containBox">
+    <header class="navbar-wrapper">
+        <div class="navbar navbar-black navbar-fixed-top">
+            <div class="container cl">
+                <a class="logo navbar-logo" href="index.html">活动中心</a>
+                <span class="logo navbar-slogan hidden-xs">简单 &middot; 免费 &middot; 快捷</span>
+            </div>
+        </div>
+    </header>
+    <div class="containBox-bg"></div>
+    <div class="wap-container">
+        <div id="slider-3">
+            <div class="slider">
+                <div class="bd">
+                    <ul>
+                        <li><a href="http://www.h-ui.net/" target="_blank"><img src="{% static 'temp/banner1.jpg'%}"></a></li>
+                        <li>
+                            <a href="http://www.h-ui.net/zhaoshang.shtml" target="_blank"><img
+                                    src="{% static 'temp/banner2.jpg'%}"></a>
+                        </li>
+                        <li>
+                            <a href="http://h-ui.net/H-ui.admin.shtml" target="_blank"><img src="{% static 'temp/banner3.jpg'%}"></a>
+                        </li>
+                    </ul>
+                </div>
+                <ol class="hd cl dots">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ol>
+            </div>
+        </div>
+        <nav class="breadcrumb">
+            <div class="container">
+                <i class="Hui-iconfont">&#xe67f;</i>
+                <a href="index_practice.html" class="c-primary">首页</a>
+                <span class="c-gray en">-</span>
+                <a href="activity_practice.html" class="c-primary">活动中心</a>
+                <span class="c-gray en">-</span>
+                <a href="{% static '/contact_us.html'%}" class="c-primary">联系我们</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="wap-container">
+        <div class="container ui-sortable">
+
+            <div class="article" style="width:1250px; border: 10px; border-color: #999;">
+
+                <a href="getin_form.html" class="mt-15 btn btn-success radius size-L">
+                    &nbsp;我&nbsp;要&nbsp;报&nbsp;名&nbsp;
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wap-container" style="clear:both;">
+        <footer class="footer mt-20">
+            <div class="container">
+                <nav class="footer-nav">
+                    <a href="index_practice.html" class="c-primary">首页</a>
+                    <span class="c-gray en">-</span>
+                    <a href="activity_practice.html" class="c-primary">活动中心</a>
+                    <span class="c-gray en">-</span>
+                    <a href="{% static '/contact_us.html'%}" class="c-primary">联系我们</a>
+                </nav>
+                <p>CopyRight 2018, All Rights Reserved XXX有限公司 版权所有 xICP备00000000号
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'lib/jquery/1.9.1/jquery.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'lib/jquery-ui/1.9.1/jquery-ui.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'static/h-ui/js/H-ui.js'%}"></script>
+<script type="text/javascript" src="{% static 'lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js'%}"></script>
+<script>
+    var tbody_br = `<p class="text-c" style="font-size: 200%; font-weight:bold;">文章标题</p>
+                <div class="panel panel-default">
+                    <div class="panel-body" style="height:100%; border: 0;">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>`;
+    $(".article").prepend(tbody_br);
+
+
+    $(function () {
+        //幻灯片
+        jQuery("#slider-3 .slider").slide({
+            mainCell: ".bd ul",
+            titCell: ".hd li",
+            trigger: "click",
+            effect: "leftLoop",
+            autoPlay: true,
+            delayTime: 700,
+            interTime: 3000,
+            pnLoop: false,
+            titOnClassName: "active"
+        });
+    });
+</script>
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->
