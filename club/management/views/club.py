@@ -100,7 +100,7 @@ def add_club(request):
         return JsonResponse(data)
 
 
-def get_user_list(request):
+def get_club_list(request):
     """
     获取社团列表 可根据社团id查询
     前端的POST信息需要包含{ 'select_club_type':'',#可选
@@ -135,9 +135,9 @@ def get_user_list(request):
     return JsonResponse(data)
 
 
-def get_user_detail(request):
+def get_club_detail(request):
     """
-    根据id获取user详情 GET POST均可
+    根据id获取club详情 GET POST均可
     :param request:
     :return:
     """
@@ -158,7 +158,7 @@ def get_user_detail(request):
         return JsonResponse(data)
 
 
-def update_user(request):
+def update_club(request):
     """
     根据id与修改数据字典修改数据库中记录 必须POST 必须有update_association_id
     :param request:
