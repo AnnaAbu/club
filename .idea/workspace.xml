@@ -624,6 +624,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/place.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/users.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/club/management/views/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -648,11 +649,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="club.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="club.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/club/management/views/club.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -670,11 +671,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/club/management/views/users.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2045">
-              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state relative-caret-position="-111">
+              <caret line="131" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="148" selection-end-column="33" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -685,7 +686,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/club/management/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="-572">
               <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding />
             </state>
@@ -741,7 +742,6 @@
         <option value="$PROJECT_DIR$/club/management/template/activity_list.html" />
         <option value="$PROJECT_DIR$/club/management/template/activity_practice.html" />
         <option value="$PROJECT_DIR$/club/management/urls.py" />
-        <option value="$PROJECT_DIR$/club/management/views/club.py" />
         <option value="$PROJECT_DIR$/club/management/views/activity.py" />
         <option value="$PROJECT_DIR$/club/management/views/finance.py" />
         <option value="$PROJECT_DIR$/club/management/views/place.py" />
@@ -749,6 +749,7 @@
         <option value="$PROJECT_DIR$/club/management/verofy.py" />
         <option value="$PROJECT_DIR$/club/management/login.py" />
         <option value="$PROJECT_DIR$/club/management/verify.py" />
+        <option value="$PROJECT_DIR$/club/management/views/club.py" />
       </list>
     </option>
   </component>
@@ -1290,38 +1291,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/club/management/views/club.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/club/management/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/club/management/views/activity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="272" column="7" lean-forward="true" selection-start-line="272" selection-start-column="7" selection-end-line="272" selection-end-column="7" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/club/management/verify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-          <folding>
-            <element signature="e#15#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1338,13 +1313,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/club/management/verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+          <folding>
+            <element signature="e#15#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/club/management/views/users.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2045">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="-111">
+          <caret line="131" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="148" selection-end-column="33" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/management/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/management/views/club.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
