@@ -19,7 +19,7 @@ urlpatterns = [
     path(r'communityform_practice/',club.communityform_practice),
     path(r'getin_form/',club.getin_form),
     path(r'login_practice/',club.login_practice),
-
+    path(r'login/', club.login),
 
 
 

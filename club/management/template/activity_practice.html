@@ -94,15 +94,7 @@
                     </div>
                 </div>
                 <div class="pagelist">
-                    <div>
-                        <div class="l-btns">
-                            <span>显示</span><input name="num" value="${num}"><span>条/页</span>
-                        </div>
-                        <div class="default">
-                            <span class="total">${total}</span>
-                            <span class="current">${page}</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -130,109 +122,62 @@
 <script type="text/javascript" src="{% static 'static/h-ui/js/H-ui.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js'%}"></script>
 <script>
-        $(document).ready(function () {
-            $.ajax({
-                type: "POST",
-                url: "/club_management/get_activity_list/",
-                dataType: 'json',
-                data: {'select_person': 'admin'},// 序列化表单值
-                async: false,
-                error: function (request) {  //失败的话
-                    alert("Connection error");
-                },
-                success: function (json) {  //成功
-                    var datalist = json['value'];
-                    for (var i = datalist.length - 1; i >= 0; i--) {
-                        var title = datalist[i]['activity_name'];
-                        var community = datalist[i]['activity_association'];
-                        var quantity = datalist[i]['id'];
-                        var tbody_str = ` <tr>
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "/club_management/get_activity_list/",
+            dataType: 'json',
+            data: {'select_person': 'admin'},// 序列化表单值
+            async: false,
+            error: function (request) {  //失败的话
+                alert("Connection error");
+            },
+            success: function (json) {  //成功
+
+                var datalist = json['value'];
+                var total = datalist.length;
+                var page = 1;
+                var num = total / page;
+                $('.pagelist').append(`<div>
+                        <div class="l-btns">
+                            <span>显示</span><input name="num" value="${num}"><span>条/页</span>
+                        </div>
+                        <div class="default">
+                            <span class="total">${total}</span>
+                            <span class="current">${page}</span>
+                        </div>
+                    </div>`);
+                for (var i = datalist.length - 1; i >= 0; i--) {
+                    var title = datalist[i]['activity_name'];
+                    var community = datalist[i]['activity_association'];
+                    var quantity = datalist[i]['id'];
+                    var tbody_str = ` <tr>
                                             <td><a href="/club_management/article_detail/">${title}</a></td>
                                             <td>${community}</td>
                                             <td>${quantity}</td>
                                           </tr>`;
-                        $("tbody").prepend(tbody_str);
-                    }
+                    $("tbody").prepend(tbody_str);
+                }
 
-                }
-            });
+            }
         });
+    });
 
 
-        $(function () {
-            //幻灯片
-            jQuery("#slider-3 .slider").slide({
-                mainCell: ".bd ul",
-                titCell: ".hd li",
-                trigger: "click",
-                effect: "leftLoop",
-                autoPlay: true,
-                delayTime: 700,
-                interTime: 3000,
-                pnLoop: false,
-                titOnClassName: "active"
-            });
+    $(function () {
+        //幻灯片
+        jQuery("#slider-3 .slider").slide({
+            mainCell: ".bd ul",
+            titCell: ".hd li",
+            trigger: "click",
+            effect: "leftLoop",
+            autoPlay: true,
+            delayTime: 700,
+            interTime: 3000,
+            pnLoop: false,
+            titOnClassName: "active"
         });
-        $(function () {
-            //获取三项数据，总数量，当前标记位置
-            var total = parseInt($(".pagelist .default .total").html());
-            var current = parseInt($(".pagelist .default .current").html());
-            var pageIndex = parseInt($(".pagelist .l-btns input").val());
-            if (pageIndex <= 0) {
-                pageIndex = 10;//默认10条
-            }
-            var pageNum = parseInt(total / pageIndex) + (total % pageIndex > 0 ? 1 : 0);//将total转为页码数
-            if (pageNum < 0) {
-                pageNum = 0;//若总数量小于0错误，则附加为1
-            }
-            if (current > pageNum && pageNum > 0) {
-                current = pageNum;//若超出范围，则附加为最后一个
-            } else if (current <= 0) {
-                current = 1;
-            }
-            var html = "<input type='hidden' name='page' value='" + current + "' />";
-            var min = current - 2;
-            var max = current + 2;
-            if (current == 1 && pageNum > 0) {//当前为第一个
-                html += "<span class=\"disabled\">«上一页</span>";
-            } else if (pageNum > 0) {
-                html += "<a page=\"" + (current - 1) + "\">«上一页</a>";
-            }
-            if (min <= 1) {
-                max = max - min + 2;
-            }
-            if (max - pageNum >= 0) {
-                min = min - (max - pageNum) - 1;
-            }
-            if (min <= 1) {
-                min = 1;
-            } else {
-                html += "<a page=\"1\">1</a>";
-                if (min > 2) {
-                    html += "<span>...</span>";
-                }
-            }
-            for (var i = min; i <= max && i <= pageNum; i++) {
-                if (i == current) {
-                    html += "<span class=\"current\">" + i + "</span>";
-                } else {
-                    html += "<a page=\"" + i + "\">" + i + "</a>";
-                }
-            }
-            if (max < pageNum) {
-                if (max <= pageNum - 2) {
-                    html += "<span>...</span>";
-                }
-                html += "<a page=\"" + pageNum + "\">" + pageNum + "</a>";
-            }
-            if (current == pageNum && pageNum > 0) {//当前为最后一个
-                html += "<span class=\"disabled\">下一页»</span>";
-            } else if (pageNum > 0) {
-                html += "<a page=\"" + (current + 1) + "\">下一页»</a>";
-            }
-            html += "<span>共" + total + "记录</span>";//数据总数
-            $(".pagelist .default").html(html);
-        });
+    });
 </script>
 </body>
 </html>

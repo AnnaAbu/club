@@ -11,8 +11,8 @@ user_id varchar(12),
 user_name varchar(255),
 user_password varchar(255),
 user_identity varchar(32),
-accociation_id int,
-user_telephone varcgar(32),
+association_id int,
+user_telephone varchar(32),
 user_sex varchar(32),
 user_status int);
 
@@ -20,7 +20,7 @@ create table association_info
 (id int auto_increment primary key,
 association_name varchar(255),
 association_telephone varchar(32),
-association_teacher	 varchar(255),
+association_teacher varchar(255),
 association_type varchar(32),
 association_state varchar(32));
 
@@ -32,7 +32,7 @@ activity_telephone varchar(32),
 activity_start_time datetime,
 activity_end_time datetime,
 activity_place varchar(255),
-activity_association	int,
+activity_association int,
 activity_state varchar(32));
 
 create table activity_application_info

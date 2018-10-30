@@ -45,14 +45,16 @@
                 <div class="bd">
                     <ul>
                         <li>
-                            <a href="http://www.h-ui.net/" target="_blank"><img src="{% static 'temp/banner1.jpg'%}"></a>
+                            <a href="http://www.h-ui.net/" target="_blank"><img
+                                    src="{% static 'temp/banner1.jpg'%}"></a>
                         </li>
                         <li>
                             <a href="http://www.h-ui.net/zhaoshang.shtml" target="_blank"><img
                                     src="{% static 'temp/banner2.jpg'%}"></a>
                         </li>
                         <li>
-                            <a href="http://h-ui.net/H-ui.admin.shtml" target="_blank"><img src="{% static 'temp/banner3.jpg'%}"></a>
+                            <a href="http://h-ui.net/H-ui.admin.shtml" target="_blank"><img
+                                    src="{% static 'temp/banner3.jpg'%}"></a>
                         </li>
                     </ul>
                 </div>
@@ -66,7 +68,7 @@
         <nav class="breadcrumb">
             <div class="container">
                 <i class="Hui-iconfont">&#xe67f;</i>
-                <a href="index_practice.html" class="c-primary">首页</a>
+                <a href="/club_management/index/" class="c-primary">首页</a>
                 <span class="c-gray en">&gt;</span>
                 <span class="c-gray">当前页面</span>
             </div>
@@ -86,12 +88,6 @@
                             </div>
                         </div>
                         <div class="row cl">
-                            <label class="form-label col-xs-3">姓名：</label>
-                            <div class="formControls col-xs-8">
-                                <input type="text" class="input-text" placeholder="" name="buildname" id="buildname">
-                            </div>
-                        </div>
-                        <div class="row cl">
                             <label class="form-label col-xs-3">联系方式：</label>
                             <div class="formControls col-xs-8">
                                 <input type="text" class="input-text" autocomplete="off" placeholder="手机"
@@ -106,18 +102,15 @@
                             </div>
                         </div>
                         <div class="row cl">
-                            <label class="form-label col-xs-3">性别：</label>
-                            <div class="radio-box">
-                                <input type="radio" id="sex-1" name="sex" value="male">
-                                <label for="sex-1">男</label>
+                            <label class="form-label col-xs-3">社团类型：</label>
+                            <div class="formControls col-xs-8">
+                                <input type="text" class="input-text" autocomplete="off" placeholder="社团类型"
+                                       name="association_type">
                             </div>
-                            <div class="radio-box">
-                                <input type="radio" id="sex-2" name="sex" value="female">
-                                <label for="sex-2">女</label>
-                            </div>
-                            <div class="row cl">
-                                <label class="form-label col-xs-3">申请附件：</label>
-                                <div class="formControls col-xs-8">
+                        </div>
+                        <div class="row cl">
+                            <label class="form-label col-xs-3">申请附件：</label>
+                            <div class="formControls col-xs-8">
 									<span class="btn-upload form-group">
 									<input class="input-text upload-url" type="text" name="uploadfile-2"
                                            id="uploadfile-2" readonly style="width:200px">
@@ -126,19 +119,20 @@
 									</a>
 									<input type="file" multiple name="file-2" class="input-file">
 									</span>
-                                </div>
-                            </div>
-                            <div class="row cl">
-                                <label class="form-label col-xs-3">备注：</label>
-                                <div class="formControls col-xs-8">
-                                    <textarea cols="" rows="" class="textarea" name="beizhu" id="beizhu"
-                                              placeholder="说点什么...最少输入10个字符"></textarea>
-                                </div>
                             </div>
                         </div>
                         <div class="row cl">
+                            <label class="form-label col-xs-3">备注：</label>
+                            <div class="formControls col-xs-8">
+                                    <textarea cols="" rows="" class="textarea" name="beizhu" id="beizhu"
+                                              placeholder="说点什么...最少输入10个字符"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row cl">
                             <div class="col-xs-8 col-xs-offset-3">
-                                <input id="submit_bu" class="btn btn-primary" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                                <input id="submit_bu" class="btn btn-primary" type="button"
+                                       value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                             </div>
                         </div>
                     </form>
@@ -152,26 +146,27 @@
 <script type="text/javascript" src="{% static 'lib/jquery/1.9.1/jquery.min.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery-ui/1.9.1/jquery-ui.min.js'%}"></script>
-<script type="text/javascript" src="{% static 'static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="{% static 'static/h-ui/js/H-ui.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.validation/1.14.0/jquery.validate.min.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.validation/1.14.0/validate-methods.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.validation/1.14.0/messages_zh.min.js'%}"></script>
 <script type="text/javascript">
-        $("#submit_bu").click(function () {
+    $("#submit_bu").click(function () {
         $.ajax({
             type: "POST",
             url: "/club_management/add_club/",
-            dataType:'json',
+            dataType: 'json',
             data: $('#demoform').serialize(),// 序列化表单值
             async: false,
             error: function (request) {  //失败的话
                 alert("Connection error");
             },
             success: function (data) {  //成功
-                if(data['status']==0){
+                if (data['status'] == 0) {
                     alert("提交成功！");
-                };  //就将返回的数据显示出来
-                window.location.href="/club_management/communityform_practice/"
+                }
+                ;  //就将返回的数据显示出来
+                window.location.href = "/club_management/communityform_practice/"
             }
 
         });

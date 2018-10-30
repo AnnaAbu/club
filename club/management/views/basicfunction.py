@@ -23,7 +23,7 @@ def get_detail(table_name, select_item_id, select_item_list):
     :return: 查询到的信息的以字段名为key值为value包装的字典
     """
     sql_select = get_select_sql(select_item_list, table_name)
-    sql_select += 'where id = ' + str(select_item_id)
+    sql_select += ' where id = ' + str(select_item_id)
     result_tuple = sql_execute(sql_select)
     data_dict = {}
     row = result_tuple[0]

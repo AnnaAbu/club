@@ -23,6 +23,7 @@ def add_activity(request):
             'stop_time': 'activity_end_time',
             'fz_telephone': 'activity_telephone',
             'space': 'activity_place',
+            'activity_association':'activity_association'
             # '??':'activity_person',#待增加前端表单
             # '?':'activity_ association' #待增加前端表单
         }

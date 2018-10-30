@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from .basicfunction import *
+from ..utils import *
+from django.shortcuts import render
 
 
 def index(request):
@@ -57,11 +61,13 @@ def login_practice(request):
     return render(request, 'login_practice.html')
 
 
-from django.http import JsonResponse
-from .basicfunction import *
-from ..utils import *
-from django.shortcuts import render
 
+
+def login(request):
+    if request.method == "POST":
+        get_login = request.POST
+        print(get_login)
+        return JsonResponse(get_login)
 
 def add_club(request):
     """
@@ -89,7 +95,7 @@ def add_club(request):
             if key in name_change_dict.keys():
                 insert_data_dict[name_change_dict[key]] = value
         print(insert_data_dict)
-        insert_data_dict['user_state'] = "等待审核"
+        insert_data_dict['association_state'] = "等待审核"
         affect_row = insert_data('association_info', insert_data_dict)
         if affect_row == 1:
             data = {'status': 0}
