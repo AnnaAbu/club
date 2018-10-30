@@ -1,0 +1,84 @@
+drop database club;
+
+create database club default character set utf8 collate utf8_general_ci;
+
+
+use club;
+
+create table user_info
+(id int auto_increment primary key,
+user_id varchar(12),
+user_name varchar(255),
+user_password varchar(255),
+user_identity varchar(32),
+accociation_id int,
+user_telephone varcgar(32),
+user_sex varchar(32),
+user_status int);
+
+create table association_info
+(id int auto_increment primary key,
+association_name varchar(255),
+association_telephone varchar(32),
+association_teacher	 varchar(255),
+association_type varchar(32),
+association_state varchar(32));
+
+create table activity_info
+(id int auto_increment primary key,
+activity_name varchar(255),
+activity_person varchar(255),
+activity_telephone varchar(32),
+activity_start_time datetime,
+activity_end_time datetime,
+activity_place varchar(255),
+activity_association	int,
+activity_state varchar(32));
+
+create table activity_application_info
+(id int auto_increment primary key,
+user_id int,
+activity_id int,
+application_time datetime,
+application_state varchar(32));
+
+create table place_info
+(id int auto_increment primary key,
+place_name varchar(255),
+place_capacity int);
+
+create table place_application_info
+(id int auto_increment primary key,
+place_id int,
+activity_id int,
+place_application_start datetime,
+place_application_end datetime,
+place_application_state varchar(32));
+
+create table finance_info
+(id int auto_increment primary key,
+finance_amount float,
+association_id int,
+activity_id int,
+finance_application_state varchar(32),
+finance_storage varchar(500));
+
+create table article_info
+(id int auto_increment primary key,
+association_id int,
+activity_id int,
+author_id int,
+article_application_state varchar(32),
+article_storage varchar(500)
+article_title varchar(255));
+
+create table check_info
+(id int auto_increment primary key,
+association_id int,
+check_time datetime,
+check_person int,
+check_level varchar(32),
+check_remark varchar(500));
+
+
+
