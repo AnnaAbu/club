@@ -16,7 +16,7 @@ urlpatterns = [
     path(r'article_detail/',club.article_detail),
     path(r'back_practice/',club.back_practice),
     path(r'backmain_practice/',club.backmain_practice),
-    path(r'communityform_practice/',club.communtityform_practice),
+    path(r'communityform_practice/',club.communityform_practice),
     path(r'getin_form/',club.getin_form),
     path(r'login_practice/',club.login_practice),
 
@@ -60,7 +60,7 @@ urlpatterns = [
     # path(r'get_club_detail/', club.get_club_detail),
     # path(r'delete_club/', club.delete_club),
     # path(r'update_club/',club.update_club),
-    # path(r'add_club/', club.add_club),
+    path(r'add_club/', club.add_club),
     #
     # path(r'update_appraisal/', appraisal.update_appraisal),
 

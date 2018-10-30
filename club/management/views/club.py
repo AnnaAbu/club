@@ -45,8 +45,8 @@ def backmain_practice(request):
     return render(request, 'backmain_practice.html')
 
 
-def communtityform_practice(request):
-    return render(request, 'communtityform_practice.html')
+def communityform_practice(request):
+    return render(request, 'communityform_practice.html')
 
 
 def getin_form(request):
@@ -70,6 +70,7 @@ def add_club(request):
     :return:
     """
     try:
+        # import ipdb;ipdb.set_trace()
         get_data_dict = {}
         if request.method == "GET":
             data = {'status': 2, 'error': 'Wrong request method'}
@@ -87,8 +88,9 @@ def add_club(request):
         for key, value in get_data_dict.items():
             if key in name_change_dict.keys():
                 insert_data_dict[name_change_dict[key]] = value
+        print(insert_data_dict)
         insert_data_dict['user_state'] = "等待审核"
-        affect_row = insert_data('user_info', insert_data_dict)
+        affect_row = insert_data('association_info', insert_data_dict)
         if affect_row == 1:
             data = {'status': 0}
         else:
