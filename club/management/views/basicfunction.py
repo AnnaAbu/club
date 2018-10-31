@@ -53,6 +53,7 @@ def update_data(table_name, update_item_dict, update_record_id):
     :return: 影响行数
     """
     sql_update = get_update_sql(update_record_id, update_item_dict, table_name)
+    print(sql_update)
     affect_row = sql_execute(sql_update, affect_row=True)
     return affect_row
 

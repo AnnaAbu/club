@@ -82,7 +82,7 @@
                         <table class="table table-border table-bg">
                             <thead class="text-c">
                             <tr>
-                                <th>活动名称</th>
+                                <th>文章名称</th>
                                 <th>主办单位</th>
                                 <th>报名人数</th>
                             </tr>
@@ -125,7 +125,7 @@
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "/club_management/get_activity_list/",
+            url: "/club_management/get_news_list/",
             dataType: 'json',
             data: {'select_person': 'admin'},// 序列化表单值
             async: false,
@@ -148,11 +148,12 @@
                         </div>
                     </div>`);
                 for (var i = datalist.length - 1; i >= 0; i--) {
-                    var title = datalist[i]['activity_name'];
-                    var community = datalist[i]['activity_association'];
+                    var title = datalist[i]['article_title'];
+                    var community = datalist[i]['association_id'];
                     var quantity = datalist[i]['id'];
+                    var id= datalist[i]['id'];
                     var tbody_str = ` <tr>
-                                            <td><a href="/club_management/article_detail/">${title}</a></td>
+                                            <td><a href="/club_management/article_detail?article_id=${id}/">${title}</a></td>
                                             <td>${community}</td>
                                             <td>${quantity}</td>
                                           </tr>`;

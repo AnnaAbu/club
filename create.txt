@@ -6,7 +6,7 @@ create database club default character set utf8 collate utf8_general_ci;
 use club;
 
 create table user_info
-(id int auto_increment primary key,
+(id int auto_increment primary key not null,
 user_id varchar(12),
 user_name varchar(255),
 user_password varchar(255),
@@ -69,7 +69,7 @@ association_id int,
 activity_id int,
 author_id int,
 article_application_state varchar(32),
-article_storage varchar(500)
+article_storage varchar(500),
 article_title varchar(255));
 
 create table check_info

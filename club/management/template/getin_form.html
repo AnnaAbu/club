@@ -66,7 +66,7 @@
         <nav class="breadcrumb">
             <div class="container">
                 <i class="Hui-iconfont">&#xe67f;</i>
-                <a href="index_practice.html" class="c-primary">首页</a>
+                <a href="/club_management/index/" class="c-primary">首页</a>
                 <span class="c-gray en">&gt;</span>
                 <span class="c-gray">当前页面</span>
             </div>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="row cl">
                             <div class="col-xs-8 col-xs-offset-3">
-                                <input class="btn btn-primary" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                                <input class="btn btn-primary" type="button" onclick="altera()" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                             </div>
                         </div>
                     </form>
@@ -149,6 +149,13 @@
 <script type="text/javascript" src="{% static 'lib/jquery.validation/1.14.0/validate-methods.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.validation/1.14.0/messages_zh.min.js'%}"></script>
 <script type="text/javascript">
+    function altera(){
+        alert('提交成功！');
+        window.location.href="/club_management/getin_form/"
+
+    }
+
+
     $(function () {
         jQuery("#slider-3 .slider").slide({
             mainCell: ".bd ul",

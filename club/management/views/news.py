@@ -74,7 +74,7 @@ def get_news_list(request):
         get_lim_num = 15
         if 'select_lim_num' in get_data_dict.keys():
             get_lim_num = get_data_dict['select_lim_num']
-        select_res_list = get_list('activity_info', get_lim_num, select_item_list, select_lim_dict)
+        select_res_list = get_list('article_info', get_lim_num, select_item_list, select_lim_dict)
         #  将社团id转化成名字
         for item in select_res_list:
             for key in item.keys():

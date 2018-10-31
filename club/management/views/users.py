@@ -4,7 +4,7 @@ from ..utils import *
 from django.shortcuts import render
 
 
-def add_user(request):
+def add_users(request):
     """
     添加用户，具体字段见name_change_dict
     :param request:
@@ -43,7 +43,7 @@ def add_user(request):
         return JsonResponse(data)
 
 
-def get_user_list(request):
+def get_users_list(request):
     """
     获取用户列表 可根据社团id查询
     前端的POST信息需要包含{ 'select_club_id':'',#可选
@@ -70,6 +70,7 @@ def get_user_list(request):
             get_lim_num = get_data_dict['select_lim_num']
         select_res_list = get_list('user_info', get_lim_num, select_item_list, select_lim_dict)
         #  将社团id转化成名字
+        print(select_res_list)
         for item in select_res_list:
             for key in item.keys():
                 if key == 'association_id':
@@ -84,7 +85,7 @@ def get_user_list(request):
 
 
 
-def get_user_detail(request):
+def get_users_detail(request):
     """
     根据id获取user详情 GET POST均可
     :param request:

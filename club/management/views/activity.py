@@ -31,7 +31,7 @@ def add_activity(request):
         for key, value in get_data_dict.items():
             if key in name_change_dict.keys():
                 insert_data_dict[name_change_dict[key]] = value
-        insert_data_dict['activity_state'] = '社团提交申请'
+        insert_data_dict['activity_state'] = '待审核'
         affect_row = insert_data('activity_info', insert_data_dict)
         if affect_row == 1:
             data = {'status': 0}
@@ -147,7 +147,9 @@ def update_activity_info(request):
         for key, value in get_data_dict.items():
             if key in name_change_dict.keys():
                 update_data_dict[name_change_dict[key]] = value
-        affect_row = update_data('activity_info', get_data_dict['update_activity_id'], update_data_dict)
+        print(get_data_dict)
+        print(update_data_dict)
+        affect_row = update_data('activity_info', update_data_dict, get_data_dict['update_activity_id'],)
         if affect_row == 1:
             data = {'status': 0}
         else:

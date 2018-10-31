@@ -1,33 +1,36 @@
 {% load staticfiles %}
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
     <!--浏览器浏览模式-->
-	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
 
     <!--告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!--手机浏览设置，页面大小及是否允许缩放-->
-	<meta name="viewport"
-	       content="
+    <meta name="viewport"
+          content="
            width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <!--取消百度siteapp自动转码-->
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    
+
     <!--css-->
     <link rel="stylesheet" type="text/css" href="{% static 'static/h-ui/css/H-ui.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'lib/Hui-iconfont/1.0.8/iconfont.min.css'%}">
-    
+
 
     <style type="text/css">
         .ui-sortable .panel-header {
             cursor: move;
         }
+
+
+
     </style>
 
-	<title>北京交通大学学生社团</title>
+    <title>北京交通大学学生社团</title>
     <meta name="keywords" content="关键词,5个左右,单个8汉字以内">
     <meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
 </head>
@@ -51,13 +54,16 @@
                         <li> 标签可用在有序列表 (<ol>) 和无序列表 (<ul>) 中。
                     -->
                     <ul>
-                        <li><a href="https://baike.baidu.com/item/%E8%85%BE%E6%A0%BC%E5%B0%94/868498?fr=aladdin" target="_blank"><img src="{% static 'temp/banner1.jpg'%}"></a></li>
+                        <li><a href="https://baike.baidu.com/item/%E8%85%BE%E6%A0%BC%E5%B0%94/868498?fr=aladdin"
+                               target="_blank"><img style="height:auto" src="{% static 'temp/banner1.jpg'%}"></a></li>
                         <li>
-                            <a href="http://music.taihe.com/song/1516492?fm=altg_new3" target="_blank"><img src="{% static 'temp/banner2.jpg'%}"></a>
+                            <a href="http://music.taihe.com/song/1516492?fm=altg_new3" target="_blank"><img
+                                    style="height:auto" src="{% static 'temp/banner2.jpg'%}"></a>
                         </li>
                         <li>
-                            <a href="http://h-ui.net/H-ui.admin.shtml" target="_blank"><img src="{% static 'temp/banner3.jpg'%}"></a>
-                        </li>                        
+                            <a href="http://h-ui.net/H-ui.admin.shtml" target="_blank"><img
+                                    style="height:auto" src="{% static 'temp/banner3.jpg'%}"></a>
+                        </li>
                     </ul>
                 </div>
                 <ol class="hd cl dots">
@@ -93,45 +99,54 @@
             <div class="panel panel-default" style="width:49%; float: left;">
                 <div class="panel-header">社联介绍</div>
                 <div class="panel-body" style="height: 460px">
-                    <img src="http://images.h-ui.net/www/AD-1000x300.gif" width="600" height="150">
+                    <img src="{% static 'temp/topic.jpg'%}" width="600" height="150">
                     <br><br>
-                    asdasd
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    北京交通大学社团联合会成立于2012年05年12日，
+                    基本组成部门：
+                    新媒体中心，办公室，外联部，宣传部，活动部，社团部。
+                    办公室：负责学生社团联合会日常事务的管理，协调主席团及各职能部门之间的工作。其工作职能主要包括文书工作，档案整理工作，各类物资的管理工作，组织学生社团会长大会及院级社团负责人会议，并与相关职责部门共同负责每年的“五四红旗分团委”学生社团评比部分及“十佳学生社团”评比工作。
+                    外联部：联动外部资源，促进对外交流。外联部主要负责对外联络和经费筹集工作，积极为我校学生社团搭建桥梁，争取资源，同时牵头举办学生社团文化节开幕式晚会。外联部积极与各高校联络感情，拓宽校际交流，参加外校大型活动并负责来访接待工作。
+                    新媒体中心：用文字还原场景，用图片生动画面。新闻中心不仅负责社团联以及社团活动的新闻采写，在第一时间发布全校社团活动的最新资讯，而且通过对人人，微博，QQ等多种新媒体的管理为社团联社团活动的线上宣传提供保障。
+                    宣传部：宣传部负责充分利用学生社团联合会内部信息、人力资源优势、PS等平面设计软件及视频制作软件的强大技术支持，帮助社团开展风格统一、内涵丰富的各种宣传活动，使社团的整体形象得到突显，使社团形成独特的文化，打造优质的品牌，并达到以优秀社团带动整个校园文化的目标。
+                    活动部：为促进校级各社团活动健康有序开展以及建设社团联公正和谐的组织氛围，活动部不仅和校级各社团保持紧密联系，始终站在社团活动的第一现场，负责对各校级社团进行监督管理及其组织机构、日常活动的监察，还负责监督社团联内部各部门的工作，对其进行必要的监督与管理。
+                    社团部：社团部是一个服务于大学学生社团联合会、各级社团以及加入各个学生社团的成员的部门，是他们权益的捍卫者，也是他们利益的忠实代表者。其主要工作职能是负责院级社团，监管社团的日常，跟进活动以及维护社团和社团成员的权益。
                     <br><br>
                 </div>
             </div>
 
             <div class="panel panel-default" style="width:49%; float: left;">
                 <div class="panel-header">
-                   活动中心
-                   <span class="f-r"><a href="/club_management/activity_practice/">更多 >></a></span>
-                </div> 
+                    活动中心
+                    <span class="f-r"><a href="/club_management/activity_practice/">更多 >></a></span>
+                </div>
                 <div class="thumb panel-body" style="height: 460px">
-                    
+
                     <div style="float: left;">
                         <a href="/">
                             <!--alt规定图片代替文本-->
-                            <div><img style="width:290px; height:200px" src="" 
-                             alt="..." class="thumbnail">  
+                            <div><img style="width:290px; height:200px" src="{% static 'temp/thumb2.jpg'%}"
+                                      alt="..." class="thumbnail">
                             </div>
-                            <div class="text-c" style="padding-top: 5px;"><strong>bbbbb</strong></div>
+                            <div class="text-c" style="padding-top: 5px;"><strong>Nightfall</strong></div>
                         </a>
                     </div>
                     <div style="float: left; padding-right: 10px; padding-bottom: 10px">
                         <a href="/">
                             <!--alt规定图片代替文本-->
-                            <div><img style="width:290px; height:200px" src="" 
-                             alt="..." class="thumbnail">  
+                            <div><img style="width:290px; height:200px" src="{% static 'temp/thumb3.jpg'%}"
+                                      alt="..." class="thumbnail">
                             </div>
-                            <div class="text-c" style="padding-top: 5px;"><strong>bbbbb</strong></div>
+                            <div class="text-c" style="padding-top: 5px;"><strong>努力</strong></div>
                         </a>
                     </div>
                     <div style="float: left;">
                         <a href="/">
                             <!--alt规定图片代替文本-->
-                            <div><img style="width:290px; height:200px" src="" 
-                             alt="..." class="thumbnail">  
+                            <div><img style="width:290px; height:200px" src="{% static 'temp/thumb4.jpg'%}"
+                                      alt="..." class="thumbnail">
                             </div>
-                            <div class="text-c" style="padding-top: 5px;"><strong>bbbbb</strong></div>
+                            <div class="text-c" style="padding-top: 5px;"><strong>青春，幼稚，张扬</strong></div>
                         </a>
                     </div>
                 </div>
@@ -141,7 +156,7 @@
     <!--<footer> 标签定义文档或节的页脚。<p> 标签定义段落。-->
     <div class="wap-container" style="clear: both;">
         <footer class="footer mt-20">
-            <div  class="container">
+            <div class="container">
                 <nav class="footer-nav">
                     <a href="/club_management/index/" class="c-primary">首页</a>
                     <span class="c-gray en">-</span>
@@ -166,10 +181,10 @@ var tbody_br=`<div style="float: left; padding-right:10px;
                        padding-bottom: 10px">
                         <a href="/">
                             <!--alt规定图片代替文本-->
-                            <div><img style="width:290px; height:200px" src="" 
+                            <div><img style="width:290px; height:200px" src="{% static 'temp/thumb1.jpg'%}"
                              alt="..." class="thumbnail">  
                             </div>
-                            <div class="text-c" style="padding-top: 5px;"><strong>aaaaa</strong></div>
+                            <div class="text-c" style="padding-top: 5px;"><strong>大寒</strong></div>
                         </a>
                     </div>`;
 $(".thumb").prepend(tbody_br)
@@ -194,6 +209,9 @@ $(".thumb").prepend(tbody_br)
             titOnClassName:"active"
         });
     });
+
+
+
 </script>
 </body>
 </html>

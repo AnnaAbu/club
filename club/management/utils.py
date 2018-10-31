@@ -29,7 +29,8 @@ def get_insert_sql(data_dict, table):
     sql_values = ''
     for key, value in data_dict.items():
         sql_keys += '`' + key + '`,'
-        sql_values += '"' + value.replace('"', "'") + '",'
+        sql_values += '"' + str(value).replace('"', "'") + '",'
+        print(sql_values)
     sql_insert = sql_insert + sql_keys[:-1] + ') values (' + sql_values[:-1] + ')'
     return sql_insert
 
@@ -37,7 +38,7 @@ def get_insert_sql(data_dict, table):
 def get_update_sql(pk_id, data_dict, table):
     sql_update = 'update ' + table + ' set '
     for key, value in data_dict.items():
-        sql_update += '`' + str(key.encode('utf-8')) + '` = "' + str(value.encode('utf-8')).replace('"', "'") + '",'
+        sql_update += '`' + str(key) + '` = "' + str(value).replace('"', "'") + '",'
     sql_update = sql_update[:-1]
     sql_update += ' where id =' + str(pk_id)
     return sql_update

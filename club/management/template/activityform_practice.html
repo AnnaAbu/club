@@ -153,7 +153,10 @@
             success: function (data) {  //成功
                 if(data['status']==0){
                     alert("提交成功！");
-                };  //就将返回的数据显示出来
+                }  //就将返回的数据显示出来
+                else{
+                    alter("提交失败!");
+                };
                 window.location.href="/club_management/activityform_practice"
             }
 

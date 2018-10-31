@@ -38,13 +38,13 @@
             </div>
         </div>
         <!--<div class="row cl">-->
-            <!--<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>-->
-            <!--<div class="formControls col-xs-8 col-sm-9">-->
-                <!--<textarea name="abstract" cols="" rows="" class="textarea" placeholder="方便检索...最少输入10个字符"-->
-                          <!--datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"-->
-                          <!--onKeyUp="$.Huitextarealength(this,200)"></textarea>-->
-                <!--<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>-->
-            <!--</div>-->
+        <!--<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>-->
+        <!--<div class="formControls col-xs-8 col-sm-9">-->
+        <!--<textarea name="abstract" cols="" rows="" class="textarea" placeholder="方便检索...最少输入10个字符"-->
+        <!--datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"-->
+        <!--onKeyUp="$.Huitextarealength(this,200)"></textarea>-->
+        <!--<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>-->
+        <!--</div>-->
         <!--</div>-->
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">文章作者：</label>
@@ -55,23 +55,35 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">文章来源：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="填写社团名称" id="sources" name="association_id">
+                <input type="text" class="input-text" value="" placeholder="填写社团id" id="sources" name="association_id">
             </div>
         </div>
         <!--<div class="row cl">-->
-            <!--<label class="form-label col-xs-4 col-sm-2">缩略图：</label>-->
-            <!--<div class="formControls col-xs-8 col-sm-9">-->
-                <!--<div class="uploader-thum-container">-->
-                    <!--<div id="fileList" class="uploader-list"></div>-->
-                    <!--<div id="filePicker" style="margin-bottom: 10px">-->
-                        <!--<a href="javascript:void();" class="btn btn-primary upload-btn">选择图片</a>-->
-                    <!--</div>-->
-                    <!--<button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<label class="form-label col-xs-4 col-sm-2">缩略图：</label>-->
+        <!--<div class="formControls col-xs-8 col-sm-9">-->
+        <!--<div class="uploader-thum-container">-->
+        <!--<div id="fileList" class="uploader-list"></div>-->
+        <!--<div id="filePicker" style="margin-bottom: 10px">-->
+        <!--<a href="javascript:void();" class="btn btn-primary upload-btn">选择图片</a>-->
+        <!--</div>-->
+        <!--<button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">文章内容:</label>
+            <label class="form-label col-xs-4 col-sm-2">活动名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="填写活动id"  name="activity_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea cols="150" rows="20" name="article_storage"></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">上传文件:</label>
             <div class="formControls col-xs-8 col-sm-9">
 					<span class="btn-upload form-group">
 						<input class="input-text upload-url" type="text" name="uploadfilename-2" id="uploadfilename-2"
@@ -85,7 +97,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button  id="#submit_bu" class="btn btn-primary radius" type="button"><i
+                <button id="submit_bu" class="btn btn-primary radius" type="button"><i
                         class="Hui-iconfont">&#xe632;</i> 保存并提交审核
                 </button>
                 <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
@@ -129,7 +141,8 @@
                     alert(data)
                 }
                 ;  //就将返回的数据显示出来
-                window.location.href = "/club_management/article_add/"
+                parent.layer.closeAll('iframe');
+                window.parent.location.reload();
             }
 
         });
@@ -272,6 +285,7 @@
         var ue = UE.getEditor('editor');
 
     });
+
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>

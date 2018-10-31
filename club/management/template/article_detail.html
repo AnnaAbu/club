@@ -60,9 +60,9 @@
         <nav class="breadcrumb">
             <div class="container">
                 <i class="Hui-iconfont">&#xe67f;</i>
-                <a href="index_practice.html" class="c-primary">首页</a>
+                <a href="/club_management/index/" class="c-primary">首页</a>
                 <span class="c-gray en">-</span>
-                <a href="activity_practice.html" class="c-primary">活动中心</a>
+                <a href="/club_management/activity_practice/" class="c-primary">活动中心</a>
                 <span class="c-gray en">-</span>
                 <a href="{% static '/contact_us.html'%}" class="c-primary">联系我们</a>
             </div>
@@ -74,7 +74,7 @@
 
             <div class="article" style="width:1250px; border: 10px; border-color: #999;">
 
-                <a href="getin_form.html" class="mt-15 btn btn-success radius size-L">
+                <a href="/club_management/getin_form/" class="mt-15 btn btn-success radius size-L">
                     &nbsp;我&nbsp;要&nbsp;报&nbsp;名&nbsp;
                 </a>
             </div>
@@ -85,9 +85,9 @@
         <footer class="footer mt-20">
             <div class="container">
                 <nav class="footer-nav">
-                    <a href="index_practice.html" class="c-primary">首页</a>
+                    <a href="/club_management/index/" class="c-primary">首页</a>
                     <span class="c-gray en">-</span>
-                    <a href="activity_practice.html" class="c-primary">活动中心</a>
+                    <a href="/club_management/activity_practice/" class="c-primary">活动中心</a>
                     <span class="c-gray en">-</span>
                     <a href="{% static '/contact_us.html'%}" class="c-primary">联系我们</a>
                 </nav>
@@ -103,19 +103,37 @@
 <script type="text/javascript" src="{% static 'static/h-ui/js/H-ui.js'%}"></script>
 <script type="text/javascript" src="{% static 'lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js'%}"></script>
 <script>
-    var tbody_br = `<p class="text-c" style="font-size: 200%; font-weight:bold;">文章标题</p>
+    var article_id=location.search;
+    article_id=article_id.toString();
+    start=article_id.indexOf('=')+1;
+    stop=article_id.indexOf('/');
+    id=article_id.substring(start,stop);
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "/club_management/get_news_detail/",
+            dataType: 'json',
+            data: {'select_article_id': id},// 序列化表单值
+            async: false,
+            error: function (request) {  //失败的话
+                alert("Connection error");
+            },
+            success: function (json) {  //成功
+                data=json['value'];
+                var article_title=data['article_title'];
+                var article_storage=data['article_storage'];
+                var tbody_br = `<p class="text-c" style="font-size: 300%; font-weight:bold;">${article_title}</p>
                 <div class="panel panel-default">
                     <div class="panel-body" style="height:100%; border: 0;">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${article_storage}</p>
                         <p></p>
                     </div>
                 </div>`;
-    $(".article").prepend(tbody_br);
+                $(".article").prepend(tbody_br);
+            }
+    });});
+
+
 
 
     $(function () {
